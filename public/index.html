@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hirely — Land your next tech job without the endless forms</title>
+  <meta name="description" content="Search tech jobs with real salaries, upload your CV once, apply in two clicks and track every application in one place.">
+  <meta name="theme-color" content="#0b0b0f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230b0b0f'/%3E%3Crect x='7' y='12' width='18' height='12' rx='2.5' stroke='%2393b4ff' stroke-width='2.2' fill='none'/%3E%3Cpath d='M13 12V9.5A1.5 1.5 0 0114.5 8h3A1.5 1.5 0 0119 9.5V12' stroke='%2393b4ff' stroke-width='2.2' fill='none'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="#/"><span class="logo-mark" style="background:var(--ink)" data-icon="briefcase" data-size="17"></span>Hirely</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#/" data-scroll="jobs">Find jobs</a>
+        <a href="#/" data-scroll="how">How it works</a>
+        <a href="#/" data-scroll="employers">For employers</a>
+        <a href="#/" data-scroll="faq">FAQ</a>
+      </nav>
+      <div class="header-actions" id="header-actions"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== LANDING ===================== -->
+    <div id="page-home">
+      <!-- 1. HERO -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="pill"><span class="live"></span><span id="hero-pill">New roles added every day</span></span>
+            <h1 class="display">Land your next tech job — <em>without the endless forms</em>.</h1>
+            <p class="lead">Upload your CV once, apply in two clicks and always know exactly where each application stands.</p>
+            <form class="searchbar" id="hero-search" role="search">
+              <label><span class="i" data-icon="search" data-size="18"></span><span class="sr-only">Job title or keyword</span><input name="q" placeholder="Job title, skill or company"></label>
+              <label><span class="i" data-icon="pin" data-size="18"></span><span class="sr-only">Location</span><input name="location" placeholder="City or remote"></label>
+              <button class="btn btn-cta" type="submit">Search jobs</button>
+            </form>
+            <div class="popular" id="popular"><span>Popular:</span></div>
+          </div>
+
+          <div class="signup-card" id="hero-card">
+            <div class="segmented" role="group" aria-label="Account type">
+              <button type="button" data-role="candidate" aria-pressed="true">I'm looking for a job</button>
+              <button type="button" data-role="employer" aria-pressed="false">I'm hiring</button>
+            </div>
+            <form id="hero-form" class="form" novalidate>
+              <div>
+                <h2 id="hero-form-title">Create your free profile</h2>
+                <p class="sub" id="hero-form-sub">Apply to any job in two clicks. Takes 30 seconds.</p>
+              </div>
+              <div class="field"><label for="h-name">Full name</label><input id="h-name" name="fullName" autocomplete="name" placeholder="Andrei Ionescu"></div>
+              <div class="field" id="company-field" hidden><label for="h-company">Company name</label><input id="h-company" name="companyName" autocomplete="organization" placeholder="Acme Software"></div>
+              <div class="field"><label for="h-email">Work or personal email</label><input id="h-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+              <div class="field"><label for="h-password">Password</label><input id="h-password" name="password" type="password" autocomplete="new-password" placeholder="At least 6 characters"></div>
+              <div class="form-alert" role="alert"></div>
+              <button class="btn btn-cta btn-lg btn-block" type="submit" id="hero-submit">Create free profile</button>
+              <p class="switch-line">Already on Hirely? <button type="button" class="link-btn" data-open-auth="login">Log in</button></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. SOCIAL PROOF -->
+      <section class="proof" aria-label="Hirely in numbers">
+        <div class="container">
+          <span class="proof-label">Live on Hirely:</span>
+          <div class="proof-stat"><strong id="stat-jobs">0</strong><span>open roles</span></div>
+          <span class="proof-sep"></span>
+          <div class="proof-stat"><strong id="stat-companies">0</strong><span>companies hiring</span></div>
+          <span class="proof-sep"></span>
+          <div class="proof-stat"><strong id="stat-remote">0</strong><span>remote-friendly</span></div>
+        </div>
+      </section>
+
+      <!-- 3. BENEFITS -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Why Hirely</span>
+            <h2>Spend your energy on interviews, not on application forms</h2>
+          </div>
+          <div class="benefits">
+            <article class="benefit">
+              <div class="ic" data-icon="zap" data-size="22"></div>
+              <h3>Apply in two clicks</h3>
+              <p>Upload your CV once. Every application after that is pick-a-CV, hit send — no retyping your whole career.</p>
+            </article>
+            <article class="benefit">
+              <div class="ic" data-icon="bell" data-size="22"></div>
+              <h3>Never get ghosted again</h3>
+              <p>Every status change — reviewing, interview, offer — lands in your notifications the moment the employer makes it.</p>
+            </article>
+            <article class="benefit">
+              <div class="ic" data-icon="wallet" data-size="22"></div>
+              <h3>See the salary before you apply</h3>
+              <p>Filter by minimum pay and skip the roles that were never going to work for you. No awkward last-round surprises.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Jobs (the product) -->
+      <section class="section section-soft" id="jobs">
+        <div class="container">
+          <div class="section-head" style="margin-bottom:36px">
+            <span class="eyebrow">Open roles</span>
+            <h2>Find a role that fits</h2>
+          </div>
+          <div class="jobs-layout">
+            <form class="filters" id="filters" aria-label="Filters">
+              <div class="field">
+                <label for="f-q">Keyword</label>
+                <input id="f-q" name="q" type="search" placeholder="e.g. Node, Python">
+              </div>
+              <div class="field">
+                <label for="f-location">Location</label>
+                <input id="f-location" name="location" placeholder="City">
+              </div>
+              <div>
+                <h3>Job type</h3>
+                <label class="check"><input type="checkbox" name="type" value="full_time"> Full time</label>
+                <label class="check"><input type="checkbox" name="type" value="part_time"> Part time</label>
+                <label class="check"><input type="checkbox" name="type" value="contract"> Contract</label>
+                <label class="check"><input type="checkbox" name="type" value="internship"> Internship</label>
+              </div>
+              <div class="field">
+                <label for="f-exp">Experience</label>
+                <select id="f-exp" name="experience">
+                  <option value="">Any level</option>
+                  <option value="entry">Entry level</option>
+                  <option value="mid">Mid level</option>
+                  <option value="senior">Senior</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-salary">Minimum salary</label>
+                <input id="f-salary" name="minSalary" type="number" min="0" step="100" placeholder="e.g. 3000">
+              </div>
+              <label class="check"><input type="checkbox" name="remote" value="true"> Remote friendly only</label>
+              <button type="reset" class="btn btn-ghost btn-sm" style="justify-self:start">Clear filters</button>
+            </form>
+
+            <div>
+              <div class="results-head">
+                <span class="count" id="result-count" aria-live="polite"></span>
+                <label class="small muted" style="display:flex;align-items:center;gap:8px">Sort
+                  <select id="sort" class="input" style="height:38px;width:auto;padding:0 12px">
+                    <option value="newest">Newest first</option>
+                    <option value="salary">Highest salary</option>
+                  </select>
+                </label>
+              </div>
+              <div class="job-list" id="job-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. HOW IT WORKS -->
+      <section class="section" id="how">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">How it works</span>
+            <h2>From profile to offer in three steps</h2>
+          </div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><h3>Create a profile</h3><p>Name, email, password. Add your headline and skills later if you like.</p></div>
+            <div class="step"><div class="step-num">2</div><h3>Upload your CV once</h3><p>PDF or Word, up to 5 MB. Keep up to five versions for different roles.</p></div>
+            <div class="step"><div class="step-num">3</div><h3>Apply &amp; track</h3><p>Two clicks per application. Follow each one from "applied" to "offer".</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- For employers -->
+      <section class="section" id="employers" style="padding-top:0">
+        <div class="container">
+          <div class="emp-band">
+            <div>
+              <span class="eyebrow" style="color:#93b4ff">For employers</span>
+              <h2>Hire faster with candidates who actually match</h2>
+              <p>Post a role in two minutes. Review CVs, move people through your pipeline and keep every candidate informed — automatically.</p>
+              <button class="btn btn-cta btn-lg" id="employer-cta">Post a job — it's free</button>
+            </div>
+            <div class="emp-points">
+              <div><span class="i" data-icon="users" data-size="20"></span><span><strong>One clean pipeline</strong><small>Reviewing → Interview → Offer → Hired, per role.</small></span></div>
+              <div><span class="i" data-icon="bell" data-size="20"></span><span><strong>Candidates notified for you</strong><small>Every status change sends them an update. No email templates to write.</small></span></div>
+              <div><span class="i" data-icon="file" data-size="20"></span><span><strong>CVs in one click</strong><small>Download any applicant's CV straight from their application.</small></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. FAQ -->
+      <section class="section section-soft" id="faq">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">FAQ</span>
+            <h2>Questions candidates ask us</h2>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Is Hirely free for job seekers?<span class="plus" data-icon="plus" data-size="16"></span></summary>
+              <div class="answer">Yes, completely. Creating a profile, uploading CVs and applying to as many jobs as you want costs nothing — now and later.</div>
+            </details>
+            <details>
+              <summary>Who can see my CV?<span class="plus" data-icon="plus" data-size="16"></span></summary>
+              <div class="answer">Only you — and the employers you choose to apply to. Your CV isn't public and isn't searchable; a company sees it only after you send it to one of their jobs.</div>
+            </details>
+            <details>
+              <summary>Can I withdraw an application?<span class="plus" data-icon="plus" data-size="16"></span></summary>
+              <div class="answer">Yes, any time before a final decision. Open "My applications" and click Withdraw. You can even re-apply to the same job later with a different CV.</div>
+            </details>
+            <details>
+              <summary>How will I know if an employer is interested?<span class="plus" data-icon="plus" data-size="16"></span></summary>
+              <div class="answer">You get a notification the moment an employer moves your application — to reviewing, interview, offer or a decision. Each application also shows a progress timeline.</div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="cta-band">
+            <h2>Your next role could be one click away.</h2>
+            <p>Create your free profile and apply today.</p>
+            <button class="btn btn-cta btn-lg" id="cta-bottom">Create free profile</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===================== CANDIDATE ===================== -->
+    <div id="page-applications" class="page" hidden>
+      <div class="container container-narrow">
+        <div class="page-head">
+          <div><h1>My applications</h1><p>Track every application and manage your CVs.</p></div>
+          <a class="btn btn-secondary" href="#/" data-scroll="jobs"><span class="i" data-icon="search" data-size="16"></span>Find jobs</a>
+        </div>
+        <div class="card" style="margin-bottom:28px">
+          <h2 style="font-size:1.1rem;margin-bottom:14px">Your CVs</h2>
+          <div id="resume-list"></div>
+          <label class="dropzone" id="dropzone" style="margin-top:14px">
+            <span class="ic" data-icon="upload" data-size="20"></span>
+            <span><strong>Upload a CV</strong><br><span class="muted small">PDF, DOC or DOCX · up to 5 MB · drag a file here or click</span></span>
+            <input type="file" id="resume-input" accept=".pdf,.doc,.docx" hidden>
+          </label>
+        </div>
+        <div id="application-list"></div>
+      </div>
+    </div>
+
+    <!-- ===================== EMPLOYER ===================== -->
+    <div id="page-listings" class="page" hidden>
+      <div class="container">
+        <div class="page-head">
+          <div><h1>My job listings</h1><p id="company-line">Your open roles and applicants.</p></div>
+          <button class="btn btn-cta" id="new-job"><span class="i" data-icon="plus" data-size="18"></span>Post a job</button>
+        </div>
+        <div class="stat-grid" id="emp-stats" style="margin-bottom:24px"></div>
+        <div id="listing-list"></div>
+      </div>
+    </div>
+
+    <!-- ===================== ADMIN ===================== -->
+    <div id="page-admin" class="page" hidden>
+      <div class="container">
+        <div class="page-head"><div><h1>Admin</h1><p>Platform health at a glance.</p></div></div>
+        <div class="stat-grid" id="admin-stats" style="margin-bottom:24px"></div>
+        <div class="card" style="margin-bottom:24px"><h2 style="font-size:1.1rem;margin-bottom:12px">Most applied-to jobs</h2><div class="table-wrap" id="top-jobs"></div></div>
+        <div class="card" style="padding:0"><div class="table-wrap" id="user-list"></div></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a class="logo" href="#/" style="font-size:1rem"><span class="logo-mark" style="background:var(--ink);width:26px;height:26px" data-icon="briefcase" data-size="14"></span>Hirely</a>
+      <nav aria-label="Footer">
+        <a href="#/" data-scroll="jobs">Find jobs</a>
+        <a href="#/" data-scroll="employers">For employers</a>
+        <a href="#/" data-scroll="faq">FAQ</a>
+      </nav>
+      <span>© <span id="year"></span> Hirely</span>
+    </div>
+  </footer>
+
+  <!-- Auth -->
+  <dialog class="modal" id="auth-dialog">
+    <div class="modal-body">
+      <div class="modal-head">
+        <div><h2>Welcome back</h2><p>Log in to continue.</p></div>
+        <button class="icon-btn" data-close aria-label="Close"><span class="i" data-icon="x" data-size="18"></span></button>
+      </div>
+      <form id="login-form" class="form" novalidate>
+        <div class="field"><label for="l-email">Email</label><input id="l-email" name="email" type="email" autocomplete="email"></div>
+        <div class="field"><label for="l-password">Password</label><input id="l-password" name="password" type="password" autocomplete="current-password"></div>
+        <div class="form-alert" role="alert"></div>
+        <button class="btn btn-cta btn-block" type="submit">Log in</button>
+        <p class="switch-line">New here? <button type="button" class="link-btn" id="to-signup">Create a free profile</button></p>
+        <p class="muted small" style="text-align:center">Demo: candidate@jobs.com / candidate123 · employer@jobs.com / employer123 · admin@jobs.com / admin123</p>
+      </form>
+    </div>
+  </dialog>
+
+  <dialog class="modal wide" id="job-dialog"><div class="modal-body" id="job-dialog-body"></div></dialog>
+  <dialog class="modal" id="notif-dialog"><div class="modal-body" id="notif-body"></div></dialog>
+  <dialog class="modal wide" id="applicants-dialog"><div class="modal-body" id="applicants-body"></div></dialog>
+
+  <dialog class="modal wide" id="job-form-dialog">
+    <div class="modal-body">
+      <div class="modal-head">
+        <div><h2 id="job-form-title">Post a job</h2><p>Tip: a clear title and a salary range help candidates decide faster.</p></div>
+        <button class="icon-btn" data-close aria-label="Close"><span class="i" data-icon="x" data-size="18"></span></button>
+      </div>
+      <form id="job-form" class="form" novalidate>
+        <input type="hidden" name="jobId">
+        <div class="form-row">
+          <div class="field"><label for="j-title">Job title</label><input id="j-title" name="title" maxlength="120" placeholder="Backend Developer (Node.js)"></div>
+          <div class="field"><label for="j-location">Location</label><input id="j-location" name="location" maxlength="100" placeholder="Bucharest"></div>
+        </div>
+        <div class="field"><label for="j-desc">Description</label><textarea id="j-desc" name="description" maxlength="10000" placeholder="What will this person do? What do they need to know?"></textarea></div>
+        <div class="form-row">
+          <div class="field"><label for="j-type">Type</label>
+            <select id="j-type" name="employmentType"><option value="full_time">Full time</option><option value="part_time">Part time</option><option value="contract">Contract</option><option value="internship">Internship</option></select></div>
+          <div class="field"><label for="j-level">Level</label>
+            <select id="j-level" name="experienceLevel"><option value="entry">Entry</option><option value="mid" selected>Mid</option><option value="senior">Senior</option></select></div>
+          <div class="field"><label for="j-min">Salary from</label><input id="j-min" name="salaryMin" type="number" min="0" placeholder="3000"></div>
+          <div class="field"><label for="j-max">Salary to</label><input id="j-max" name="salaryMax" type="number" min="0" placeholder="4500"></div>
+        </div>
+        <div class="field"><label for="j-tags">Skills / tags <span class="muted">(comma separated)</span></label><input id="j-tags" name="tags" placeholder="node, express, sql"></div>
+        <label class="check"><input type="checkbox" name="isRemote"> Remote friendly</label>
+        <div class="form-alert" role="alert"></div>
+        <div class="actions" style="justify-content:flex-end">
+          <button type="button" class="btn btn-secondary" data-close>Cancel</button>
+          <button type="submit" class="btn btn-cta">Publish job</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
